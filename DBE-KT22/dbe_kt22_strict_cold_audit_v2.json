@@ -1,0 +1,82 @@
+{
+  "schema_version": "dbe_kt22_strict_cold_audit_v2",
+  "input_root": "/home/dell/KT/KT_LLM_experiments/kt_main/data/DBE-KT22",
+  "resolved_csv_parent": "/home/dell/KT/KT_LLM_experiments/kt_main/data/DBE-KT22/2_DBE_KT22_datafiles_100102_csv",
+  "files": {
+    "Questions": "/home/dell/KT/KT_LLM_experiments/kt_main/data/DBE-KT22/2_DBE_KT22_datafiles_100102_csv/Questions.csv",
+    "Question_KC_Relationships": "/home/dell/KT/KT_LLM_experiments/kt_main/data/DBE-KT22/2_DBE_KT22_datafiles_100102_csv/Question_KC_Relationships.csv",
+    "KCs": "/home/dell/KT/KT_LLM_experiments/kt_main/data/DBE-KT22/2_DBE_KT22_datafiles_100102_csv/KCs.csv",
+    "Question_Choices": "/home/dell/KT/KT_LLM_experiments/kt_main/data/DBE-KT22/2_DBE_KT22_datafiles_100102_csv/Question_Choices.csv",
+    "Transaction": "/home/dell/KT/KT_LLM_experiments/kt_main/data/DBE-KT22/2_DBE_KT22_datafiles_100102_csv/Transaction.csv",
+    "KC_Relationships": "/home/dell/KT/KT_LLM_experiments/kt_main/data/DBE-KT22/2_DBE_KT22_datafiles_100102_csv/KC_Relationships.csv"
+  },
+  "resolved_columns": {
+    "questions_id": "id",
+    "question_kc_question_id": "question_id",
+    "question_kc_kc_id": "knowledgecomponent_id",
+    "kc_id": "id",
+    "transaction_question_id": "question_id",
+    "transaction_student_id": "student_id",
+    "transaction_correctness": "answer_state"
+  },
+  "questions_n": 212,
+  "kcs_n": 98,
+  "question_kc_edges_n": 402,
+  "transactions_n": 161953,
+  "students_n": 1264,
+  "transaction_questions_n": 212,
+  "choices_n": 756,
+  "kc_relationship_rows_n": 202,
+  "coverage": {
+    "questions_with_kc_mapping_n": 212,
+    "questions_with_transactions_n": 212,
+    "questions_with_both_n": 212
+  },
+  "kc_set_statistics": {
+    "unique_kc_sets": 127,
+    "questions_with_seen_exact_kcset_peer": 132,
+    "kcsets_with_at_least_2_questions": 47,
+    "kcsets_with_at_least_3_questions": 17,
+    "max_questions_per_kcset": 9
+  },
+  "response_support_per_question": {
+    "min": 466.0,
+    "median": 792.0,
+    "mean": 763.9292452830189,
+    "max": 1090.0
+  },
+  "correctness_column_unique_values_sample": [
+    "False",
+    "True"
+  ],
+  "question_columns": [
+    "id",
+    "question_rich_text",
+    "question_title",
+    "explanation",
+    "hint_text",
+    "question_text",
+    "difficulty"
+  ],
+  "question_kc_columns": [
+    "id",
+    "question_id",
+    "knowledgecomponent_id"
+  ],
+  "transaction_columns": [
+    "id",
+    "selection_change",
+    "start_time",
+    "end_time",
+    "difficulty_feedback",
+    "trust_feedback",
+    "answer_state",
+    "answer_text",
+    "student_id",
+    "hint_used",
+    "question_id",
+    "answer_choice_id",
+    "is_hidden"
+  ],
+  "scientific_note": "This audit only characterizes pre-result support. Freeze the external strict-cold grouping rule (exact KC-set vs preregistered alternative) before inspecting S8 replication performance."
+}
